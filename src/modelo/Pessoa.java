@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Pessoa {
 	String nome;
 	ArrayList<Telefone> telefones = new ArrayList<Telefone>();
+	
 	public String getNome() {
 		return nome;
 	}
@@ -14,9 +15,14 @@ public class Pessoa {
 	public ArrayList<Telefone> getTelefones() {
 		return telefones;
 	}
-	public void setTelefones(ArrayList<Telefone> telefones) {
-		this.telefones = telefones;
+
+	public void adicionar(Telefone telefone) {
+		telefones.add(telefone);
 	}
+	public void remover(Telefone telefone) {
+		telefones.remove(telefone);
+	}
+	
 	@Override
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", telefones=" + telefones + "]";

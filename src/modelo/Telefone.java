@@ -4,6 +4,7 @@ package modelo;
 public class Telefone {
 	String numero;
 	Pessoa dono;
+	
 	public String getNumero() {
 		return numero;
 	}
