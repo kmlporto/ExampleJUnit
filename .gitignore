@@ -1,5 +1,6 @@
 bin/
 .settings/
+.classpath
 .project
 banco.db4o
 bancoservidor.db4o
