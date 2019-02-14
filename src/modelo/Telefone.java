@@ -26,5 +26,8 @@ public class Telefone {
 		this.numero = numero;
 		this.dono = dono;
 	}
-	
+	public Telefone(String numero) {
+		super();
+		this.numero = numero;
+	}
 }

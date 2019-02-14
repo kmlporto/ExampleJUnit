@@ -25,12 +25,15 @@ public class Pessoa {
 	
 	@Override
 	public String toString() {
-		return "Pessoa [nome=" + nome + ", telefones=" + telefones + "]";
+		return "Pessoa \n nome: " + nome +  (telefones != null ? " telefones: " + telefones : "sem telefone");
 	}
-	public Pessoa(String nome, ArrayList<Telefone> telefones) {
+	public Pessoa(String nome) {
 		super();
 		this.nome = nome;
-		this.telefones = telefones;
+	}
+	public Pessoa(String nome, Telefone telefone) {
+		super();
+		this.telefones.add(telefone);
 	}
 	
 }
