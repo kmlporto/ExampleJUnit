@@ -3,37 +3,30 @@ package modelo;
 import java.util.ArrayList;
 
 public class Pessoa {
-	String nome;
-	ArrayList<Telefone> telefones = new ArrayList<Telefone>();
+	private String nome;
+	private ArrayList<Telefone> contatos = new ArrayList<Telefone>();
+	private Telefone meuTelefone;
 	
+	public Pessoa(String nome, Telefone meuTelefone) {
+		super();
+		this.nome = nome;
+		this.meuTelefone = meuTelefone;
+	}
+
 	public String getNome() {
 		return nome;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public ArrayList<Telefone> getTelefones() {
-		return telefones;
+
+	public ArrayList<Telefone> getContatos() {
+		return contatos;
 	}
 
-	public void adicionar(Telefone telefone) {
-		telefones.add(telefone);
+	public Telefone getMeuTelefone() {
+		return meuTelefone;
 	}
-	public void remover(Telefone telefone) {
-		telefones.remove(telefone);
-	}
-	
-	@Override
-	public String toString() {
-		return "Pessoa \n nome: " + nome +  (telefones != null ? " telefones: " + telefones : "sem telefone");
-	}
-	public Pessoa(String nome) {
-		super();
-		this.nome = nome;
-	}
-	public Pessoa(String nome, Telefone telefone) {
-		super();
-		this.telefones.add(telefone);
+
+	public void adicionar (Telefone telefone) {
+		this.contatos.add(telefone);
 	}
 	
 }
