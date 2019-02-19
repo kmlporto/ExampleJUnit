@@ -12,15 +12,16 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import fachada.Fachada;
+//import junit.framework.TestCase;
 import modelo.Pessoa;
 import modelo.Telefone;
 
-public class AgendaTest{
+//extends TestCase
+public class AgendaTest {
 
 	private Pessoa kamila = Fachada.cadastrarPessoa("Kamila", 12345678);
 	private Pessoa fabricio = Fachada.cadastrarPessoa("Fabrício Liberato", 87654321);
-		
-	
+
 	@Test
 	// Verificar se o número de telefone foi vinculado a esse Cliente
     public void testAssertEquals() {
