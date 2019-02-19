@@ -28,9 +28,9 @@ public class Agenda {
 		this.telefones.add(telefone);
 	}
 	
-	public Telefone pesquisarTelefone (String numeroTelefone) {
+	public Telefone pesquisarTelefone (int numeroTelefone) {
 		for (Telefone t: this.telefones)
-			if (t.getNumero().equals(numeroTelefone))
+			if (t.getNumero() == numeroTelefone)
 				return t;
 		return null;
 	}
@@ -42,9 +42,9 @@ public class Agenda {
 		return null;
 	}
 	
-	public Pessoa pesquisarDono (String numeroTelefone) {
+	public Pessoa pesquisarDono (int numeroTelefone) {
 		for (Telefone t: this.telefones)
-			if (t.getNumero().equals(numeroTelefone))
+			if (t.getNumero() == numeroTelefone)
 				return t.getDono();
 		return null;
 	}

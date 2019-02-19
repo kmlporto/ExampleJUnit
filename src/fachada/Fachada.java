@@ -10,7 +10,10 @@ public class Fachada {
 
 	private static Agenda agenda = new Agenda();
 	
-	public static Pessoa cadastrarPessoa (String nome, String numeroTelefone) {
+	public static Pessoa cadastrarPessoa (String nome, int numeroTelefone) {
+//		Telefone t = agenda.pesquisarTelefone(numeroTelefone);
+//		if (t != null)
+//			throw new Exception("Numero de telefone vinculado a outra pessoa");
 		Telefone telefone = new Telefone(numeroTelefone);
 		Pessoa pessoa = new Pessoa(nome, telefone);
 		telefone.setDono(pessoa);
@@ -19,10 +22,16 @@ public class Fachada {
 		return pessoa;
 	}
 	
-	public static void adicionarContato (Pessoa pessoa, String numeroTelefone) {
+	public static void adicionarContato (Pessoa pessoa, int numeroTelefone) {
 		Telefone telefone = agenda.pesquisarTelefone(numeroTelefone);
 		pessoa.adicionar(telefone);
 		telefone.adicionar(pessoa);
+	}
+	
+	public static boolean verificarExistenciaDeDono (Telefone t) {
+		if (t.getDono() == null)
+			return false;
+		return true;
 	}
 	
 	// Consultas por Pessoa
@@ -31,7 +40,7 @@ public class Fachada {
 		return agenda.getPessoas();
 	}
 
-	public static Pessoa pesquisarDono (String numeroTelefone) {
+	public static Pessoa pesquisarDono (int numeroTelefone) {
 		return agenda.pesquisarDono(numeroTelefone);
 	}
 	
@@ -49,7 +58,8 @@ public class Fachada {
 	public static List<Telefone> listarTelefones () {
 		return agenda.getTelefones();
 	}
-	public static Telefone pesquisarTelefone (String numeroTelefone) {
+	
+	public static Telefone pesquisarTelefone (int numeroTelefone) {
 		return agenda.pesquisarTelefone(numeroTelefone);
 	}
 	

@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Telefone {
-	private String numero;
+	private int numero;
 	private Pessoa dono;
 	// Pessoas que tem este número nos seus contatos
 	private List<Pessoa> pessoas;
 	
 	
-	public Telefone(String numero) {
+	public Telefone(int numero) {
 		super();
 		this.numero = numero;
 		this.pessoas = new ArrayList<>(); 
 	}
 	
-	public String getNumero() {
+	public int getNumero() {
 		return numero;
 	}
 	public Pessoa getDono() {
